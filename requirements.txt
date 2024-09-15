@@ -5,3 +5,4 @@ python-dotenv==1.0.1
 python-dotenv==1.0.1
 requests==2.32.3
 together==1.2.12
+django-cors-headers==4.4.0
