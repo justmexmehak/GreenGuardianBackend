@@ -67,6 +67,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://green-guardian-opal.vercel.app",  # Replace with the actual frontend domain
 ]
 
+# Allow credentials to be included in requests
+CORS_ALLOW_CREDENTIALS = True
+
 SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True  
 
