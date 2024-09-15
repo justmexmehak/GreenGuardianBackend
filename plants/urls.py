@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PlantCreateView
+from .views import *
 
 urlpatterns = [
     path('create/', PlantCreateView.as_view(), name='plant-create'),
