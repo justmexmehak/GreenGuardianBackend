@@ -28,8 +28,6 @@ class PlantCreateView(generics.CreateAPIView):
         self.request.session['image_id'] = image_id
         print("Saved image id ", self.request.session["image_id"])
 
-        # Return the image_id in the response
-        return Response({'image_id': image_id}, status=status.HTTP_201_CREATED)
 
 class PlantDummyDataView(APIView):
     def get(self, request, format=None):
@@ -53,7 +51,7 @@ class PlantDetailView(APIView):
         # image_id = request.session.get('image_id')
         print(f'Got image id {image_id}')
         if not image_id:
-            return Response({"error": "Image ID not found in session"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Image ID not found"}, status=status.HTTP_400_BAD_REQUEST)
         plant = Plant.objects.get(id=image_id)
         data = get_plant_details(plant.plant.path)
         plant.details = data
