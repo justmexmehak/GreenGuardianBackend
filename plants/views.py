@@ -52,6 +52,8 @@ class PlantDetailView(APIView):
             return Response({"error": "Image ID not found in session"}, status=status.HTTP_400_BAD_REQUEST)
         plant = Plant.objects.get(id=image_id)
         data = get_plant_details(plant.plant.path)
+        plant.details = data
+        plant.save()
         return Response(data, status=status.HTTP_200_OK)
 
 
